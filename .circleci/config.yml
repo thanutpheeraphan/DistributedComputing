@@ -6,7 +6,7 @@ jobs:
       - image: circleci/node4.8.2
         auth:
           username: temporarykrane-user
-          password: Puhbyk-focji7-xecrog_PASSWORD 
+          password: $Puhbyk-focji7-xecrog_PASSWORD 
     steps:
       - checkout
       - run: echo "Hello, World"
