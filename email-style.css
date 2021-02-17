@@ -1,0 +1,31 @@
+body {
+    font-family: 'Dosis';
+}
+
+.mail {
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 400px;
+    background: #D8F1F8;
+    border: 1px soild silver;
+    border-radius: 10px;
+}
+
+.mail h2 {
+    margin-left: 38px;
+}
+
+input {
+    margin-bottom: 10px;
+    font-size: 20pt;
+}
+
+input:focus,
+textarea:focus {
+    background-color: rgb(255, 255, 238);
+}
+
+input submit {
+    font-size: 12pt;
+}

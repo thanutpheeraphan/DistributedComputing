@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='email-style.css' type='text/css' />
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Dosis&display=swap'>
+
+</head>
+
+<body onload='document.form1.text1.focus()'>
+    <div class="mail">
+        <h2>Email</h2>
+        <form name="form1" action="" method="POST">
+            <ul>
+                <input type='text' name='text1' />
+                <input id="post-btn" type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)" />
+            </ul>
+        </form>
+
+    </div>
+    <script src="email-validation.js"></script>
+</body>
+
+</html>
