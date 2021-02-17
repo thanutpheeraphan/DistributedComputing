@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/node4.8.2
+      - image: circleci/node:4.1.0
         auth:
           username: temporarykrane
           password: Puhbyk-focji7-xecrog
