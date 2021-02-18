@@ -21,13 +21,7 @@ jobs:
       - run: ls
       - run: pwd
       - run: sudo pip install pipenv
-      - run: pipenv install
-      - run: pipenv install --user -r requirements.txt
-
-      # - run: pipenv install Flask
-      # - run: pipenv install schedule
-      # - run: pipenv install pytest
-      # - run: pipenv shell
+      - run: pipenv install #load all dependencies
       - run: pipenv run pytest
       # - run: pipenv run python test-server.py test
       - store_test_results:
