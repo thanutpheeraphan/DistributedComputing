@@ -19,11 +19,12 @@ jobs:
       # - run: "sudo npm install -g npm@latest"
       - run: python3 --version
       - run: ls
-      - run: pwd && cd backend
       - run: pwd
       - run: sudo pip install pipenv
       - run: pipenv install
-      - run: pipenv run python server.py
+      - run: pipenv install Flask
+      - run: pipenv install schedule
+      # - run: pipenv run python server.py 
       - store_test_results:
           path: test-results
       - store_artifacts:
