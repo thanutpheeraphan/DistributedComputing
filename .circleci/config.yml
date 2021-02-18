@@ -18,7 +18,7 @@ jobs:
       - run: node -v
       - run: "sudo npm install -g npm@latest"
       - run: python3 --version
-      - run: pip3 install Flask
+      - run: python3 pip3 --version
   # test:
   #   docker:
   #     - image: cimg/<language>:<version TAG>
