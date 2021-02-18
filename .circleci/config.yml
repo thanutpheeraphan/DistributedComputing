@@ -20,7 +20,7 @@ jobs:
       # - run: "sudo npm install -g npm@latest"
       - run: python3 --version
       - run: cd /backend
-             ls
+      - run: ls
       - run: sudo pip install pipenv
       - run: pipenv install
       - run: pipenv run python server.py
