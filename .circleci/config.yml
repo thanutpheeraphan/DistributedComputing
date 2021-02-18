@@ -19,6 +19,7 @@ jobs:
       # - run: "sudo npm install -g npm@latest"
       - run: python3 --version
       - run: ls
+      - run: pwd && cd backend
       - run: pwd
       - run: sudo pip install pipenv
       - run: pipenv install
