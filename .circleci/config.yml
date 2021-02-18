@@ -5,7 +5,7 @@ orbs:
 
 jobs:
   build:
-    working_directory: ~/project/backend
+    working_directory: ~/backend
     docker:
       # - image: cimg/node:15.8.0
       - image: circleci/python:3.9.0
@@ -13,12 +13,15 @@ jobs:
           username: temporarykrane
           password: Puhbyk-focji7-xecrog
     steps:
-      - checkout
+      - checkout:
+            path: ~/backend
+      - run: echo "Hello, World"
       # - run: npm i
       # - run: node -v
       # - run: "sudo npm install -g npm@latest"
       - run: python3 --version
       - run: ls
+      - run: pwd
       - run: sudo pip install pipenv
       - run: pipenv install
       - run: pipenv run python server.py
