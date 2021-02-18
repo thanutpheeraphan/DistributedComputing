@@ -21,12 +21,8 @@ jobs:
       - run: ls
       - run: pwd
       - run: sudo pip install pipenv
-      - run: pipenv install
-      - run: pipenv install Flask
-      - run: pipenv install schedule
-      - run: pipenv install pytest
-      - run: pipenv shell
-      - run: pytest
+      - run: pipenv install #load all dependencies
+      - run: pipenv run pytest
       # - run: pipenv run python test-server.py test
       - store_test_results:
           path: test-results
@@ -34,16 +30,6 @@ jobs:
           path: test-results
           destination: tr1
 
-         
-  # test:
-  #   docker:
-  #     - image: cimg/<language>:<version TAG>
-  #       auth:
-  #         username: mydockerhub-user
-  #         password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-  #   steps:
-  #     - checkout
-  #     - run: <command>
 workflows:
   version: 2.1
   build_and_test:
