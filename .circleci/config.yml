@@ -5,6 +5,7 @@ orbs:
 
 jobs:
   build:
+    working_directory: ~/backend
     docker:
       - image: cimg/node:15.8.0
         auth:
@@ -17,6 +18,7 @@ jobs:
       - run: node -v
       - run: "sudo npm install -g npm@latest"
       - run: python3 --version
+      - run: pip3 install Flask
   # test:
   #   docker:
   #     - image: cimg/<language>:<version TAG>
