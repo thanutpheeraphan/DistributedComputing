@@ -13,14 +13,13 @@ jobs:
           username: temporarykrane
           password: Puhbyk-focji7-xecrog
     steps:
-      - checkout
+      - checkout:
+            path: ~/backend
       - run: echo "Hello, World"
       # - run: npm i
       # - run: node -v
       # - run: "sudo npm install -g npm@latest"
       - run: python3 --version
-      - run: ls
-      - run: cd backend/
       - run: ls
       - run: sudo pip install pipenv
       - run: pipenv install
