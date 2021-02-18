@@ -15,7 +15,6 @@ jobs:
       - run: echo "Hello, World"
       - run: npm i
       - run: node -v
-      - run: npm run test
   # test:
   #   docker:
   #     - image: cimg/<language>:<version TAG>
