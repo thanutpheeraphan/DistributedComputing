@@ -24,7 +24,8 @@ jobs:
       - run: pipenv install
       - run: pipenv install Flask
       - run: pipenv install schedule
-      # - run: pipenv run python server.py 
+      - run: pipenv install pytest
+      # - run: pipenv run python test-server.py test
       - store_test_results:
           path: test-results
       - store_artifacts:
