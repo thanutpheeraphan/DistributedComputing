@@ -18,7 +18,7 @@ def create_conn():
     db_file = os.path.join(current_path, 'superdb.db')
     
     try:
-        conn = sqlite3.connect(db_file)
+        conn = sqlite3.connect(db_file, timeout=20)
     except Error as e:
         print(e)
         
@@ -30,8 +30,8 @@ def insert(conn, email):
     cur = conn.cursor()
     cur.execute(sql, email)
     conn.commit()
-
-    return cur.lastrowid
+    conn.close()
+    return True
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
