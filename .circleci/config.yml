@@ -19,10 +19,17 @@ jobs:
       # - run: node -v
       # - run: "sudo npm install -g npm@latest"
       - run: python3 --version
-      - run: ls
       - run: cd backend
+      - run: ls
       - run: sudo pip install pipenv
       - run: pipenv install
+      - run: pipenv run python server.py
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
+          destination: tr1
+
          
   # test:
   #   docker:
