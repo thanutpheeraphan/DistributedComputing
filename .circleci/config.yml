@@ -18,7 +18,7 @@ jobs:
       - run: node -v
       - run: "sudo npm install -g npm@latest"
       - run: python3 --version
-      - run: python3 pip3 --version
+      - run: python3 pip --version
   # test:
   #   docker:
   #     - image: cimg/<language>:<version TAG>
