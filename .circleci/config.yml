@@ -17,6 +17,7 @@ jobs:
       - run: npm i
       - run: node -v
       - run: "sudo npm install -g npm@latest"
+      - run: sudo python setup.py develop
       - run: python3 --version
       - run: ls
       - run: sudo pip3 install pipenv
