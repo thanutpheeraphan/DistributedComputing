@@ -7,20 +7,21 @@ jobs:
   build:
     working_directory: ~/backend
     docker:
-      - image: cimg/node:15.8.0
+      # - image: cimg/node:15.8.0
+      - image: circleci/python:3.9.0
         auth:
           username: temporarykrane
           password: Puhbyk-focji7-xecrog
     steps:
       - checkout
       - run: echo "Hello, World"
-      - run: npm i
-      - run: node -v
-      - run: "sudo npm install -g npm@latest"
-      - run: sudo python setup.py develop
+      # - run: npm i
+      # - run: node -v
+      # - run: "sudo npm install -g npm@latest"
       - run: python3 --version
       - run: ls
-      - run: sudo pip3 install pipenv
+      - run: cd backend
+      - run: sudo pip install pipenv
       - run: pipenv install
          
   # test:
