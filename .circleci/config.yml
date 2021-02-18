@@ -21,9 +21,9 @@ jobs:
       - run: ls
       - run: pwd
       - run: sudo pip install pipenv
-      - run: sudo pip install Flask
-      - run: sudo pip install schedule
       - run: pipenv install
+      - run: pipenv install Flask
+      - run: pipenv install schedule
       - run: pipenv run python server.py
       - store_test_results:
           path: test-results
