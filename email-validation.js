@@ -16,7 +16,6 @@
 function myFunction() {
     var email;
     email = document.getElementById("textEmail").value;
-    submitBtn.addEventListener('click',myFunction);
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
     if (reg.test(textEmail.value) == false) {
@@ -34,7 +33,7 @@ function myFunction() {
         }
 
         $.ajax({
-            url: "http://0.0.0.0:8088/email",
+            url: "http://0.0.0.0:8080/email",
             //the data to send to
             data: JSON.stringify(payload),
             type: "POST",

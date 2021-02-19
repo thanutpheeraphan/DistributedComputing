@@ -19,7 +19,7 @@ test('Check email', () => {
   textEmail.value = "n@mail.com";
  // submitBtn.
  expect(textEmail.value).toBe("n@mail.com");
- // expect(demo.innerHTML).toBe("Valid Email ->n@mail.com");
+  //expect(demo.innerHTML).toBe("Valid Email ->n@mail.com");
 
 
 });
