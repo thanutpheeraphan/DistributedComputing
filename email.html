@@ -5,20 +5,17 @@
     <meta charset="utf-8">
     <link rel='stylesheet' href='email-style.css' type='text/css' />
     <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Dosis&display=swap'>
-
 </head>
 
-<body onload='document.form1.text1.focus()'>
-    <div>Test</div>
-    <div class="mail">
-        <h2>Email</h2>
-        <form name="form1" action="" method="POST">
-            <ul>
-                <input type='text' name='text1' />
-                <input id="post-btn" type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)" />
-            </ul>
-        </form>
-    </div>
+<body>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <h2>Email Validation</h2>
+
+    <input id="textEmail">
+    <input type="submit" value="Submit" id="submitBtn" onclick="myFunction()">
+    <p id="demo" style="color: red;"></p>
     <script src="email-validation.js"></script>
 </body>
 
