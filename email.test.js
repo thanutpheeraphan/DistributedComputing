@@ -17,7 +17,7 @@ test('Check email', () => {
   const submitBtn = document.getElementById('submitBtn');
   const demo=document.getElementById("demo");
   textEmail.value = "n@mail.com";
- // submitBtn.
+ // submitBtn. //find how to simulate check
  expect(textEmail.value).toBe("n@mail.com");
   //expect(demo.innerHTML).toBe("Valid Email ->n@mail.com");
 

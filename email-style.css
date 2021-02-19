@@ -10,14 +10,14 @@ body {
     background: #D8F1F8;
     border: 1px soild silver;
     border-radius: 10px;
+    text-align: center;
 }
 
-.mail h2 {
-    margin-left: 38px;
+#textEmail {
+    border-radius: 5px;
 }
 
 input {
-    margin-bottom: 10px;
     font-size: 20pt;
 }
 
