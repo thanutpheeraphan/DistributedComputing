@@ -1,25 +1,21 @@
-// function ValidateEmail(inputText) {
-//     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+function ValidateEmail(inputText) {
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-//     if (inputText.match(mailformat)) {
-//         //document.form1.text1.focus();
-
-//         return true;
-//     } else {
-//         alert("You have entered an invalid email address!");
-//         //document.form1.text1.focus();
-//         return false;
-//     }
-// }
-// module.exports = ValidateEmail;
+    if (inputText.match(mailformat)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+module.exports = ValidateEmail;
 
 function myFunction() {
     var email;
     email = document.getElementById("textEmail").value;
+    var a =ValidateEmail(email);
+    //var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
-    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
-    if (reg.test(textEmail.value) == false) {
+    if (a == false) {
         document.getElementById("demo").style.color = "red";
         document.getElementById("demo").innerHTML = "Invalid EMail ->" + email;
         alert('Invalid Email Address ->' + email);

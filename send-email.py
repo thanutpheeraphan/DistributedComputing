@@ -1,29 +1,12 @@
-## require pip install schedule
-import schedule
-import time
-import json
-import os
-import sqlite3
+import psycopg2
 import smtplib
 import requests
+import schedule
+import json
+import time
 
 from email.message import EmailMessage
 from sqlite3 import Error
-
-def create_conn():
-    current_path = os.path.dirname(os.path.realpath(__file__))
-    db_file = os.path.join(current_path, 'superdb.db')
-    try:
-        conn = sqlite3.connect(db_file)
-    except Error as e:
-        print(e)
-    return conn
-
-def query_email(conn):
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM subscriber")
-    rows = cur.fetchall()
-    return rows
 
 def get_fortune():
     re = requests.get("http://yerkee.com/api/fortune/all")
@@ -46,14 +29,34 @@ def send_email(subject, message, destination):
         print(e)
 
 def send_email_to_subsctiber():
-    emails = query_email(create_conn())
-    for email in emails:
-        email = str(email)
-        message = get_fortune()
-        send_email('Your fortune cookie today', message, email[2:len(email)-3])
-    
-schedule.every().day.at("08:00").do(send_email_to_subsctiber)
+    try:
+        connection = psycopg2.connect(user="dkklvsxqivphui",
+                                          password="19bba5b736bd796a2f70c6703a41a210971b1e5994a9b4b4318ce56e7a803cd9",
+                                          host="ec2-3-221-243-122.compute-1.amazonaws.com",
+                                          port="5432",
+                                          database="d720fio2023gsb")
+        cursor = connection.cursor()
+        sql = "SELECT * FROM subscriber"
+        cursor.execute(sql)
+        emails = cursor.fetchall() 
+       
+        for email in emails:
+            email = str(email)
+            message = get_fortune()
+            send_email('Your fortune cookie today', message, email[2:len(email)-3])
+           
+    except (Exception, psycopg2.Error) as error :
+        print ("Error while fetching data from PostgreSQL", error)
 
+    finally:
+        if(connection):
+            cursor.close()
+            connection.close()
+            print("PostgreSQL connection is closed")
+
+
+schedule.every().day.at("08:00").do(send_email_to_subsctiber)
 while True:
     schedule.run_pending()
     time.sleep(60)
+
