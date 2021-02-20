@@ -22,8 +22,8 @@ jobs:
       - run: pwd
       - run: sudo pip install pipenv
       - run: pipenv install #load all dependencies
-      - run: python -m unittest discover -p "Test_server*.py"
-      # - run: pipenv run pytest
+      # - run: python -m unittest discover -p "Test_server*.py"
+      - run: pipenv run pytest
       # - run: pipenv run python test-server.py test
       - store_test_results:
           path: test-results
