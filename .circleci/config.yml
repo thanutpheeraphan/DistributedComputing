@@ -27,7 +27,7 @@ jobs:
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
+            source env/bin/activate
             mkdir test-results
             pipenv run pytest --junitxml=test-results/junit.xml
       # - run: pipenv run python test-server.py test
