@@ -2,8 +2,40 @@ body {
     font-family: 'Dosis';
 }
 
+.top-container {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.split {
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    width: 50%;
+    padding-top: 20px;
+}
+
+.left {
+    background-color: #ffffff;
+}
+
+.right {
+    background-color: #3b4c9b;
+}
+
+.centered {
+    text-align: center;
+}
+
+.email-picture {
+    max-width: 70%;
+    max-height: 70%;
+    background-position: center;
+}
+
 .mail {
     margin: auto;
+    margin-top: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 400px;
@@ -15,6 +47,16 @@ body {
 
 #textEmail {
     border-radius: 5px;
+}
+
+#btn {
+    margin-top: 10px;
+}
+
+p {
+    text-align: center;
+    color: red;
+    font-size: 20px;
 }
 
 input {

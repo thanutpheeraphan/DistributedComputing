@@ -12,20 +12,19 @@ module.exports = ValidateEmail;
 function myFunction() {
     var email;
     email = document.getElementById("textEmail").value;
-    var a =ValidateEmail(email);
-    //var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    var check = ValidateEmail(email);
 
-    if (a == false) {
+    if (check == false) {
         document.getElementById("demo").style.color = "red";
-        document.getElementById("demo").innerHTML = "Invalid EMail ->" + email;
-        alert('Invalid Email Address ->' + email);
+        document.getElementById("demo").innerHTML = "Invalid Eail -> " + email;
+        alert('Invalid Email Address -> ' + email);
         return false;
     } else {
-        document.getElementById("demo").style.color = "DarkGreen";
-        document.getElementById("demo").innerHTML = "Valid Email ->" + email;
+        document.getElementById("demo").style.color = "greenyellow";
+        document.getElementById("demo").innerHTML = "Valid Email -> " + email;
 
-        $textEmail = $('#textEmail').val();
-        payload = {
+        var $textEmail = $('#textEmail').val();
+        var payload = {
             email: $textEmail
         }
 

@@ -10,17 +10,29 @@
 <body>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-    <div class="mail">
-        <h1>Email</h1>
-
-        <input id="textEmail">
-        <input id="btn" type="submit" value="Submit" onclick="myFunction()">
-        <p id="demo" style="color: red;"></p>
-    </div>
-
     <script src="email-validation.js"></script>
 
+    <div style="display:flex; flex-direction:column">
+        <div class="top-container">
+
+            <div class="split left " style="display: flex;flex-direction: column;">
+                <div class="centered ">
+                    <img class="email-picture " src="Mail sent.gif" alt="send-email ">
+                </div>
+            </div>
+
+            <div class="split right " style="display:flex; ">
+                <div class="centered ">
+                    <div class="mail">
+                        <h1>Email</h1>
+
+                        <input id="textEmail">
+                        <input id="btn" type="submit" value="Submit" onclick="myFunction()">
+                    </div>
+                    <p id="demo"></p>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
