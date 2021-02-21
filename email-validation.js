@@ -16,7 +16,7 @@ function myFunction() {
 
     if (check == false) {
         document.getElementById("demo").style.color = "red";
-        document.getElementById("demo").innerHTML = "Invalid Eail -> " + email;
+        document.getElementById("demo").innerHTML = "Invalid Email -> " + email;
         alert('Invalid Email Address -> ' + email);
         return false;
     } else {

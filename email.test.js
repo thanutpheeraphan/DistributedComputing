@@ -1,5 +1,5 @@
 const ValidateEmail = require('./email-validation');
-var testMail="b@gmail.com"
+var testMail="baba"
 test('mail', () => {
     expect(ValidateEmail(testMail)).toBe(true);
   })
